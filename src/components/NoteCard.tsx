@@ -2,7 +2,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { deleteNote } from '@/lib/queries';
 
-export function NoteCard({ note }: { note: any }) {
+export function NoteCard({ note }: { note: {summary:string,content:string,title:string, id:string} }) {
   const queryClient = useQueryClient();
   const { mutate: removeNote } = useMutation({
     mutationFn: () => deleteNote(note.id),
