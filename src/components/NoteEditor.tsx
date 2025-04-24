@@ -13,7 +13,7 @@ export function NoteEditor({ userId }: { userId: string }) {
     onSuccess: () => {
       setTitle('');
       setContent('');
-      queryClient.invalidateQueries(['notes']);
+      queryClient.invalidateQueries({queryKey: ['notes']});
     }
   });
 
